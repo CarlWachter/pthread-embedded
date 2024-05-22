@@ -120,7 +120,7 @@ int sys_sem_post(HermitSemaphore* sem);
 int sys_sem_trywait(HermitSemaphore* sem);
 int sys_sem_timedwait(HermitSemaphore *sem, unsigned int ms);
 #define sys_sem_wait(sem)	sys_sem_timedwait(sem, 0)
-int sys_sem_cancelablewait(HermitSemaphore* sem, unsigned int ms);
+int sys_sem_timedwait(HermitSemaphore* sem, unsigned int ms);
 int sys_spinlock_init(HermitSpinlock** lock);
 int sys_spinlock_destroy(HermitSpinlock* lock);
 int sys_spinlock_lock(HermitSpinlock* lock);
