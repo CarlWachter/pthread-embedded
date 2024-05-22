@@ -495,7 +495,7 @@ pte_osResult pte_osSemaphoreCancellablePend(pte_osSemaphoreHandle semHandle, uns
 
   if (pTimeout)
     msec = *pTimeout;
-  ret = sys_sem_cancelablewait(semHandle, msec);
+  ret = sys_sem_timedwait(semHandle, msec);
 
   if (ret == -ETIME)
     return PTE_OS_TIMEOUT;
